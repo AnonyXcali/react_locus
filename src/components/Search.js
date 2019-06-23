@@ -50,8 +50,6 @@ class Search extends Component {
           cards[i].classList.remove('_selected');
           if(!cards[i].parentElement.nextElementSibling){
             let bounding = cards[i].parentElement.parentElement.children[0].children[0].getBoundingClientRect();
-            console.log(bounding);
-            debugger;
             if (
                 bounding.top >= elementBounding.top &&
                 bounding.left >= 0 &&
@@ -61,14 +59,12 @@ class Search extends Component {
                 //do nothing
                } else {
                   console.log('Not in the viewport... whomp whomp');
-                  element.scrollTop = ;
+                  element.scrollTop = bounding.top;
                 }
             cards[i].parentElement.parentElement.children[0].children[0].classList.add('_selected')
            break;
           }else{
             let bounding = cards[i].parentElement.nextElementSibling.children[0].getBoundingClientRect();
-            console.log(bounding);
-            debugger;
             if (
                 bounding.top >= elementBounding.top &&
                 bounding.left >= 0 &&
@@ -95,8 +91,6 @@ class Search extends Component {
           cards[i].classList.remove('_selected');
           if(!cards[i].parentElement.previousElementSibling){
             let bounding = cards[i].parentElement.parentElement.children[cards.length-1].children[0].getBoundingClientRect();
-            console.log(bounding);
-            debugger;
             if (
                 bounding.top >= elementBounding.top &&
                 bounding.bottom <= elementBounding.bottom
@@ -111,8 +105,6 @@ class Search extends Component {
            break;
           }else{
             let bounding = cards[i].parentElement.previousElementSibling.children[0].getBoundingClientRect();
-            console.log(bounding);
-            debugger;
             if (
                 bounding.top >= elementBounding.top &&
                 bounding.bottom <= elementBounding.bottom
