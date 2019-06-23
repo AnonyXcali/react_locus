@@ -4,6 +4,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import HighlightMatch from '../Utility/HighlightMatch.js'
 
 ////STYLES////
 
@@ -57,7 +58,8 @@ class ResultCard extends Component {
             <strong>{this.props.data.id}</strong>
           </Typography>
           <Typography className='name' color="textSecondary">
-            <i>{this.props.data.name}</i>
+            <i><HighlightMatch dataToBeHighlighted={this.props.data.name}
+            keywordData={this.props.keywordData}/></i>
           </Typography>
           <Typography className='address' variant="body2" component="p">
             {this.props.data.address}

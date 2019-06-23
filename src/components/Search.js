@@ -5,6 +5,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import Clear from '@material-ui/icons/Clear'
 
 ////STYLES////
 
@@ -37,6 +38,13 @@ class Search extends Component {
       value : [e.target.name] = e.target.value
     })
     this.props.recieveChange(e.target.value);
+  }
+
+  clearTextArea = () => {
+    this.setState({
+      value : ''
+    })
+    this.props.recieveChange('');
   }
 
   handleKeyPress = (e) => {
@@ -120,17 +128,20 @@ class Search extends Component {
     return (
       <div className={'inputDiv'}>
       <Paper style={root}>
+        <IconButton style={iconButton} aria-label="Search">
+          <SearchIcon />
+        </IconButton>
         <InputBase
           autoComplete="off"
           style={input}
-          placeholder="Search type id, address, name"
-          inputProps={{ 'aria-label': 'Search type id, address, name' }}
+          placeholder="Search type id, address, name..."
+          inputProps={{ 'aria-label': 'Search type id, address, name...' }}
           value={this.state.value}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyPress}
         />
-        <IconButton style={iconButton} aria-label="Search">
-          <SearchIcon />
+        <IconButton onClick={this.clearTextArea} style={iconButton} aria-label="Search">
+          <Clear />
         </IconButton>
       </Paper>
       </div>
