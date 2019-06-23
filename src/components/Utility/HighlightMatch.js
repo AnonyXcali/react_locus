@@ -8,7 +8,7 @@ class HighlightMatch extends Component {
     console.log(parts);
     return <span> { parts.map((part, i) =>
         <span key={i}
-        style={part.toLowerCase() === higlight.toLowerCase() ? {  textDecoration:'underline', fontWeight: 'bold', color:'#98484d' } : {} }>
+        style={part.toLowerCase() === higlight.toLowerCase() ? {  textDecoration:'underline', fontWeight: 'bold', color:'#4e8eee' } : {} }>
             { part }
         </span>)
     } </span>;

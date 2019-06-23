@@ -5,6 +5,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import HighlightMatch from '../Utility/HighlightMatch.js'
+import Divider from '@material-ui/core/Divider';
+
 
 ////STYLES////
 
@@ -61,8 +63,10 @@ class ResultCard extends Component {
             <i><HighlightMatch dataToBeHighlighted={this.props.data.name}
             keywordData={this.props.keywordData}/></i>
           </Typography>
+          <Divider variant='left'/>
           <Typography className='address' variant="body2" component="p">
-            {this.props.data.address}
+          <HighlightMatch dataToBeHighlighted={this.props.data.address}
+          keywordData={this.props.keywordData}/>
           </Typography>
         </CardContent>
       </Card>

@@ -16,3 +16,9 @@
 .highlighted{
   color:white;
 }
+
+.appTitle{
+  position: absolute;
+  bottom: 100%;
+  color: white;
+}

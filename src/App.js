@@ -16,10 +16,11 @@ class App extends Component {
   filterPeopleData = (keyword, peopleData) => {
     keyword = keyword.trim();
     let filteredData = peopleData.filter( key => {
-      if(key['id'].toLowerCase().indexOf(keyword)      >= 0  ||
-         key['name'].toLowerCase().indexOf(keyword)    >= 0  ||
-         key['address'].toLowerCase().indexOf(keyword) >= 0  ||
-         key['pincode'].toLowerCase().indexOf(keyword) >= 0
+      if(key['id'].toLowerCase().indexOf(keyword)               >= 0  ||
+         key['name'].toLowerCase().indexOf(keyword)             >= 0  ||
+         key['address'].toLowerCase().indexOf(keyword)          >= 0  ||
+         key['pincode'].toLowerCase().indexOf(keyword)          >= 0  ||
+         key['items'].toString().toLowerCase().indexOf(keyword) >= 0
         ){
           return key;
       }
@@ -81,6 +82,9 @@ class App extends Component {
   render(){
     return(
       <div className='mainDiv'>
+        <div className='appTitle'>
+          <h1>React Search</h1>
+        </div>
         <Search
           recieveChange={(keyword) => {this.recieveChange(keyword)}}
           />

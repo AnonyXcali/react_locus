@@ -5,13 +5,15 @@
 }
 
 .address{
-  margin-top: -12px;
+  margin-top: 12px;
   font-size: 12px !important;
   color: #757575;
 }
 
 .name{
   font-size: 13px !important;
+  margin-top: -7px !important;
+  margin-bottom: 10px !important;
 }
 
 
