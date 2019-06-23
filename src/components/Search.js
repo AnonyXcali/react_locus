@@ -61,7 +61,7 @@ class Search extends Component {
                 //do nothing
                } else {
                   console.log('Not in the viewport... whomp whomp');
-                  element.scrollTop = element.scrollHeight;
+                  element.scrollTop = ;
                 }
             cards[i].parentElement.parentElement.children[0].children[0].classList.add('_selected')
            break;
