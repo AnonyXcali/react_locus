@@ -11,3 +11,8 @@
   position: relative;
     z-index: 100;
 }
+
+
+.highlighted{
+  color:white;
+}

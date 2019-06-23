@@ -77,7 +77,7 @@ class App extends Component {
   componentDidMount(prevProps, prevState){
     this.fetchData()
   }
-
+//clearTextArea
   render(){
     return(
       <div className='mainDiv'>

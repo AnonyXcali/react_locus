@@ -12,6 +12,7 @@ class ResultCardList extends Component {
         <ResultCard
         data={key}
         iter={iter}
+        keywordData={this.props.keyword}
         />
         </li>
       )
