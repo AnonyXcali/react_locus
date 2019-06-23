@@ -51,8 +51,6 @@ class Search extends Component {
             let bounding = cards[i].parentElement.parentElement.children[0].children[0].getBoundingClientRect();
             if (
                 bounding.top >= elementBounding.top &&
-                bounding.left >= 0 &&
-                bounding.right <= elementBounding.right &&
                 bounding.bottom <= elementBounding.bottom
               ) {
                 //do nothing
@@ -65,8 +63,6 @@ class Search extends Component {
             let bounding = cards[i].parentElement.nextElementSibling.children[0].getBoundingClientRect();
             if (
                 bounding.top >= elementBounding.top &&
-                bounding.left >= 0 &&
-                bounding.right <= elementBounding.right &&
                 bounding.bottom <= elementBounding.bottom
               ) {
                 //do nothing
@@ -109,7 +105,6 @@ class Search extends Component {
               ) {
                 //do nothing
                } else {
-                 console.log('Not in the viewport... whomp whomp');
                  element.scrollTop = element.scrollTop - (elementBounding.bottom - bounding.bottom);
                 }
 
@@ -128,8 +123,8 @@ class Search extends Component {
         <InputBase
           autoComplete="off"
           style={input}
-          placeholder="Search Query"
-          inputProps={{ 'aria-label': 'Search Query' }}
+          placeholder="Search type id, address, name"
+          inputProps={{ 'aria-label': 'Search type id, address, name' }}
           value={this.state.value}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyPress}
