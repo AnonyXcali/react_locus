@@ -25,6 +25,17 @@ const pos = {
 
 class ResultCard extends Component {
 
+  handleMouseFunc = e => {
+    if(e.target.parentElement.parentElement.parentElement.classList.contains('cardList')){
+      let curr = e.target.parentElement.parentElement.parentElement;
+      let currChildren = curr.children;
+      for(let i = 0 ; i < currChildren.length ; i++){
+        currChildren[i].children[0].classList.remove('_selected');
+      }
+      e.target.parentElement.classList.add('_selected');
+    }
+  }
+
   componentDidUpdate(prevProps, prevState){
     if(prevProps.data !== this.props.data){
       let selected = document.getElementsByClassName('_selected');
@@ -37,7 +48,10 @@ class ResultCard extends Component {
 
   render(){
     return (
-      <Card className={this.props.iter === 0 ? '_resultCard _selected' : '_resultCard'} style={card}>
+      <Card
+        onMouseOver = {this.handleMouseFunc}
+        className={this.props.iter === 0 ? '_resultCard _selected' : '_resultCard'}
+        style={card}>
         <CardContent>
           <Typography style={title} color="textSecondary" gutterBottom>
             <strong>{this.props.data.id}</strong>

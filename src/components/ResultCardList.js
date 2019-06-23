@@ -7,7 +7,8 @@ class ResultCardList extends Component {
   renderData = dataToRender => {
     return dataToRender.map((key, iter)=> {
       return(
-        <li className='cardListItem'>
+        <li
+        className='cardListItem'>
         <ResultCard
         data={key}
         iter={iter}
@@ -19,10 +20,11 @@ class ResultCardList extends Component {
 
 
   render() {
-    if(this.props.data && this.props.data.length > 0){
+    if(this.props.data && this.props.data.length > 0 && this.props.keyword.length > 0){
       return (
         <div className="resultCardDiv">
-          <ul className='cardList'>
+          <ul
+          className='cardList'>
             {this.renderData(this.props.data)}
           </ul>
         </div>

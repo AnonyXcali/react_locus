@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   filterPeopleData = (keyword, peopleData) => {
+    keyword = keyword.trim();
     let filteredData = peopleData.filter( key => {
       if(key['id'].toLowerCase().indexOf(keyword)      >= 0  ||
          key['name'].toLowerCase().indexOf(keyword)    >= 0  ||
@@ -25,7 +26,7 @@ class App extends Component {
     })
     this.setState({
       size: filteredData.length,
-      filteredPeopleData : filteredData.length === this.state.peopleData.length ? [] : filteredData
+      filteredPeopleData : filteredData
     })
   }
 

@@ -43,7 +43,6 @@ class Search extends Component {
     if(e.keyCode === 40){
       let element = document.querySelector('.cardList');
       let elementBounding = element.getBoundingClientRect();
-      console.log(elementBounding);
       let cards = document.getElementsByClassName('_resultCard');
       for(let i=0; i<cards.length;i++){
         if(cards[i].classList.contains('_selected')){
@@ -58,7 +57,6 @@ class Search extends Component {
               ) {
                 //do nothing
                } else {
-                  console.log('Not in the viewport... whomp whomp');
                   element.scrollTop = bounding.top;
                 }
             cards[i].parentElement.parentElement.children[0].children[0].classList.add('_selected')
