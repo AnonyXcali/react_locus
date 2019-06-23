@@ -1,0 +1,40 @@
+.resultCardDiv{
+    width: 408px;
+    position: relative;
+    top:-15px;
+}
+
+.address{
+  margin-top: -12px;
+  font-size: 12px !important;
+  color: #757575;
+}
+
+.name{
+  font-size: 13px !important;
+}
+
+
+.noResultCardDiv{
+  border-radius: 0px;
+  height: 150px;
+  text-align: center;
+  width: 408px;
+  height: 100px;
+}
+
+._resultCard{
+  cursor:pointer;
+}
+
+._selected{
+  background-color: #fffddc !important;
+}
+
+.cardList{
+  padding:0;
+  list-style-type: none;
+  position: relative;
+  overflow-y: scroll;
+  height:400px;
+}
