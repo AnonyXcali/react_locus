@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import HighlightMatch from '../Utility/HighlightMatch.js'
 import Divider from '@material-ui/core/Divider';
@@ -19,10 +17,6 @@ const card = {
 const title = {
   fontSize: '18px',
   color: '#403a3a'
-}
-
-const pos = {
-
 }
 
 ////STYLES///
@@ -51,20 +45,22 @@ class ResultCard extends Component {
   }
 
   checkItemExist = (data, keyword) => {
+    keyword = keyword.trim();
     if(data.hasItem){
       let dataFilter = data.items.filter(key => {
         if(key.toLowerCase().indexOf(keyword) >= 0){
           return key;
         }
+        return false;
       })
       let string = [': found in items'];
 
       dataFilter.map((key, iter) => {
         string.unshift('"'+key+'" ')
+        return key;
       })
 
       string = string.join(" ");
-      console.log(string);
 
       return (
         <Typography className='item' color="textSecondary">
@@ -87,7 +83,7 @@ class ResultCard extends Component {
   render(){
     return (
       <Card
-        onMouseOver = {this.handleMouseFunc}
+        onMouseOver={this.handleMouseFunc}
         className={this.props.iter === 0 ? '_resultCard _selected' : '_resultCard'}
         style={card}>
         <CardContent>

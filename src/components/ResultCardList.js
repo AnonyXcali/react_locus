@@ -7,7 +7,7 @@ class ResultCardList extends Component {
   renderData = dataToRender => {
     return dataToRender.map((key, iter)=> {
       return(
-        <li
+        <li key={'_uiid'+iter}
         className='cardListItem'>
         <ResultCard
         data={key}
