@@ -20,9 +20,16 @@ class App extends Component {
          key['name'].toLowerCase().indexOf(keyword)             >= 0  ||
          key['address'].toLowerCase().indexOf(keyword)          >= 0  ||
          key['pincode'].toLowerCase().indexOf(keyword)          >= 0  ||
-         key['items'].toString().toLowerCase().indexOf(keyword) >= 0
+         key['items'].toString().toLowerCase().indexOf(keyword) >= 0 
         ){
           return key;
+      }
+    })
+    filteredData.map(key => {
+      if(key['items'].toString().toLowerCase().indexOf(keyword) >= 0){
+        key.hasItem = true
+      }else{
+        key.hasItem = false
       }
     })
     this.setState({

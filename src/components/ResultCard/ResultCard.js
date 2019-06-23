@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import HighlightMatch from '../Utility/HighlightMatch.js'
 import Divider from '@material-ui/core/Divider';
+import Badge from '@material-ui/core/Badge';
 
 
 ////STYLES////
@@ -49,6 +50,40 @@ class ResultCard extends Component {
     }
   }
 
+  checkItemExist = (data, keyword) => {
+    if(data.hasItem){
+      let dataFilter = data.items.filter(key => {
+        if(key.toLowerCase().indexOf(keyword) >= 0){
+          return key;
+        }
+      })
+      let string = [': found in items'];
+
+      dataFilter.map((key, iter) => {
+        string.unshift('"'+key+'" ')
+      })
+
+      string = string.join(" ");
+      console.log(string);
+
+      return (
+        <Typography className='item' color="textSecondary">
+        <Badge className='badge' color="primary" variant="dot">
+        </Badge>
+        {string}
+        </Typography>
+      )
+    }
+
+    return (
+      <Typography className='item' color="textSecondary">
+      <Badge className='no-item-badge' color="primary" variant="dot">
+      </Badge>
+       No Item matched
+      </Typography>
+    )
+  }
+
   render(){
     return (
       <Card
@@ -63,6 +98,8 @@ class ResultCard extends Component {
             <i><HighlightMatch dataToBeHighlighted={this.props.data.name}
             keywordData={this.props.keywordData}/></i>
           </Typography>
+          <Divider variant='left'/>
+              {this.checkItemExist(this.props.data, this.props.keywordData)}
           <Divider variant='left'/>
           <Typography className='address' variant="body2" component="p">
           <HighlightMatch dataToBeHighlighted={this.props.data.address}

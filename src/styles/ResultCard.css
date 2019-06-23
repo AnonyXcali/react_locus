@@ -5,7 +5,7 @@
 }
 
 .address{
-  margin-top: 12px;
+  margin-top: 6px !important;
   font-size: 12px !important;
   color: #757575;
 }
@@ -15,7 +15,11 @@
   margin-top: -7px !important;
   margin-bottom: 10px !important;
 }
-
+.item{
+  font-size: 9px !important;
+  font-type: italic;
+  padding: 5px !important
+}
 
 .noResultCardDiv{
   border-radius: 0px;
@@ -39,4 +43,18 @@
   position: relative;
   overflow-y: scroll;
   height:400px;
+}
+
+.badge .MuiBadge-dot{
+  position: relative;
+  left: -7px;
+  top: 2px;
+  background-color: #ff9e6f8c;
+}
+
+.no-item-badge .MuiBadge-dot{
+  position: relative;
+  left: -7px;
+  top: 2px;
+  background-color: red;
 }
