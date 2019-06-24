@@ -1,6 +1,8 @@
 ## [REACT] Simple autoSuggest module.
 
 In the project directory, you can run:
+### `npm install`
+Install the necessary dependancies 
 
 ### `npm start`
 
